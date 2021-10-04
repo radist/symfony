@@ -331,7 +331,7 @@ class XmlEncoder implements EncoderInterface, DecoderInterface, NormalizationAwa
         }
 
         if (1 === $node->childNodes->length && \in_array($node->firstChild->nodeType, [\XML_TEXT_NODE, \XML_CDATA_SECTION_NODE])) {
-            return $node->firstChild->nodeValue;
+            return ['#' => $node->firstChild->nodeValue];
         }
 
         $value = [];
